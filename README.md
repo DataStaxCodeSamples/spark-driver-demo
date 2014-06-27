@@ -1,5 +1,14 @@
 spark-driver-demo
 =================
+if the spark driver is not yet on maven, 
+
+git clone https://github.com/DataStaxCodeSamples/spark-driver
+
+cd spark-driver
+
+sbt publishLocal #this install it into the local .m2 directory
+
+cd ..
 
 
 install Cassandra or DataStax Enterprise
@@ -7,7 +16,7 @@ install Cassandra or DataStax Enterprise
   git clone git@github.com:DataStaxCodeSamples/spark-driver-demo.git
 
   cd spark-driver-demo
-
+  
   cd data
 
   wget http://seanlahman.com/files/database/lahman-csv_2014-02-14.zip
