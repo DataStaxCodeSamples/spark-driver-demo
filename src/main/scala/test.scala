@@ -12,10 +12,10 @@ object test extends App {
   
   val sc = new SparkContext("local[2]", "test", sparkConf)
   val ssc =  new StreamingContext(sparkConf, Seconds(1))
-  val allstarful = sc.cassandraTable("demo", "allstarfull")
+  val allstarfull = sc.cassandraTable("demo", "allstarfull")
   
-  println("count: " + allstarful.count)
+  println("count: " + allstarfull.count)
   
   //allstarful.foreach(println(_))
-println("first: " + allstarful.first)
+println("first: " + allstarfull.first)
 }
