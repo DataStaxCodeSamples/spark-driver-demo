@@ -77,6 +77,28 @@ CREATE TABLE awardsmanagers (
   PRIMARY KEY (playerid, awardid, yearid)
 );
 
+CREATE TABLE awardssharemanagers (
+  awardid text,
+  yearid int,
+  lgid text,
+  playerid text,
+  pointsmax int,
+  pointswon int,
+  votesfirst int,
+  PRIMARY KEY (awardid, yearid, lgid, playerid)
+);
+
+CREATE TABLE awardsshareplayers (
+  awardid text,
+  yearid int,
+  lgid text,
+  playerid text,
+  pointsmax float,
+  pointswon float,
+  votesfirst float,
+  PRIMARY KEY (awardid, yearid, lgid, playerid)
+);
+
 CREATE TABLE awardsplayers (
   playerid text,
   awardid text,
