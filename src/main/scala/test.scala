@@ -10,12 +10,12 @@ object test extends App {
   .setMaster("local[2]")
   .setAppName("spark-driver-demo")
   
-  val sc = new SparkContext("127.0.0.1", "test", sparkConf)
+  val sc = new SparkContext("local[2]", "test", sparkConf)
   val ssc =  new StreamingContext(sparkConf, Seconds(1))
   val allstarful = sc.cassandraTable("demo", "allstarfull")
   
-  //println("count: " + rdd.count)
+  println("count: " + allstarful.count)
   
   //allstarful.foreach(println(_))
-//  println("first: " + rdd.first)
+println("first: " + allstarful.first)
 }
