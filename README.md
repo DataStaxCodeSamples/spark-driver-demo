@@ -19,4 +19,14 @@ install Cassandra or DataStax Enterprise
   cqlsh < ../src/main/resources/cql/load_data.cql
 
   ./bin/sbt run
+  
+  # if you have dse
+
+  dse spark
+  
+  use cassandra_spark_mlbdata;
+
+shark> select master.*,schoolsplayers.schoolid from master join schoolsplayers where schoolsplayers.playerid=master.playerid limit 50;
+Time taken: 4.146 second
+
 
