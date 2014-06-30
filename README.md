@@ -1,6 +1,12 @@
 spark-driver-demo
 =================
 
+The code in this repo, and the instructions below use the new Cassandra/Spark integration open sourced by datastax.
+
+See https://github.com/riptano/spark-driver for more details
+
+It uses a set of csv files containing historical MLB statistics. loads them int using the cqlsh COPY command, and then demonstrates use of spark from scala, joins from shark (using DataStax Enterprise), 
+
 # set up
 if the spark driver is not yet on maven,  
 ```
@@ -28,6 +34,8 @@ install Cassandra or DataStax Enterprise
   cqlsh < ../src/main/resources/cql/schema.cql 
 
   cqlsh < ../src/main/resources/cql/load_data.cql
+  
+  cd ..
 
   ./bin/sbt run #runs src/main/scala/test.scala
 ```
@@ -77,5 +85,7 @@ sbt consoleQuick
 ^D
 ```
 how is my data divided up?
+```
  allstarful.partitions;
 res5: Array[org.apache.spark.Partition] = Array(CassandraPartition(0,Set(/127.0.0.1),Vector(CqlTokenRange(token("playerid") > -1759687600836599613), CqlTokenRange(token("playerid") <= -1759687600836599613)),1920))
+```
