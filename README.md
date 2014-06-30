@@ -42,21 +42,20 @@ install Cassandra or DataStax Enterprise
 
 if you have dse
 ```
-  dse spark
+  dse shark
   
   use cassandra_spark_mlbdata;
 
 shark> select master.*,schoolsplayers.schoolid from master join schoolsplayers where schoolsplayers.playerid=master.playerid limit 50;
 
-Time taken: 4.146 second
-
  
   dse spark
 
-  println("count: " + allstarful.count)
-
   val allstarful = sc.cassandraTable("demo", "allstarfull")
 
+  println("count: " + allstarful.count)
+
+ 
 ```
 
 with either dse or cassandra
@@ -81,7 +80,7 @@ sbt consoleQuick
   .setAppName("spark-driver-demo")
   
   val sc = new SparkContext("local[2]", "test", sparkConf)
-  val allstarful = sc.cassandraTable("demo", "allstarfull")
+  val allstarful = sc.cassandraTable("cassandra_spark_mlbdata", "allstarfull")
 ^D
 ```
 how is my data divided up?
