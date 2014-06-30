@@ -10,11 +10,11 @@ It uses a set of csv files containing historical MLB statistics. loads them int 
 # set up
 if the spark driver is not yet on maven,  
 ```
-git clone https://github.com/DataStaxCodeSamples/spark-driver
+git clone https://github.com/riptano/spark-driver
 
 cd spark-driver
 
-sbt publishLocal #this install it into the local .m2 directory
+sbt publishLocal #this installs it into the local .m2 directory and allow maven (and sbt) to treat it as it were publicly published
 
 cd ..
 ```
