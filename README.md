@@ -32,14 +32,14 @@ install Cassandra or DataStax Enterprise
   ./bin/sbt run #runs src/main/scala/test.scala
 ```
 
-== if you have dse
+if you have dse
 ```
   dse spark
   
   use cassandra_spark_mlbdata;
 
 shark> select master.*,schoolsplayers.schoolid from master join schoolsplayers where schoolsplayers.playerid=master.playerid limit 50;
-```
+
 Time taken: 4.146 second
 
  
@@ -49,17 +49,20 @@ Time taken: 4.146 second
 
   val allstarful = sc.cassandraTable("demo", "allstarfull")
 
+```
 
-### with either dse or cassandra
+with either dse or cassandra
 
 
-**cqlsh>** select count(*) from cassandra_spark_mlbdata.appearances_by_player_year limit 10000000;
+```
+cqlsh> select count(*) from cassandra_spark_mlbdata.appearances_by_player_year limit 10000000;
 
     count
    -------
     98146
 
 (1 rows)
+```
 
 ```
 sbt consoleQuick
