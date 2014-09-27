@@ -1,7 +1,7 @@
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.streaming.StreamingContext
-import com.datastax.driver.spark._
+import com.datastax.spark.connector._
 import org.apache.spark.streaming.Seconds
 
 object test extends App {
